@@ -1,0 +1,84 @@
+# Локальное окружение Python
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+
+# Тесты и временные файлы
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.log
+
+# Локальные загрузки и результаты анализов
+artifacts/uploads/
+artifacts/web_jobs/
+artifacts/_startup_test*.log
+artifacts/.deps_ok
+artifacts/разбор/
+
+# Кэш поз датасета: считается один раз, чтобы замер не гонял MediaPipe заново
+artifacts/_poses/
+
+
+# Большие бинарные модели и индексы. Если модель нужна в репозитории, добавьте её вручную.
+*.joblib
+*.index.joblib
+
+# Исходные пользовательские видео и материалы защиты в корне проекта.
+# Ролики с образцами техник (папка «примеры техник») нужны сайту — они
+# добавлены в репозиторий отдельно, исключением ниже.
+*.mov
+*.avi
+*.mkv
+*.pptx
+*.pdf
+видео проект/
+видео примеры для проекта/
+*.mp4
+!примеры техник/*.mp4
+
+# Отладочные прогоны прежних версий. Код, который их делал, давно удалён,
+# а в репозитории они занимали 24 МБ.
+artifacts/_perf_*/
+artifacts/_verify_*/
+artifacts/_check_one/
+artifacts/_test_eval/
+
+# Остатки разбора пояснительной записки из PDF
+artifacts/pdf_*
+artifacts/_pz_*
+artifacts/orig_diagrams/
+artifacts/orig_pages/
+artifacts/screenshots/
+
+# Системные файлы
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Бинарники служебных утилит не место в репозитории
+tools/cloudflared.exe
+
+# Модель позы MediaPipe — 9 МБ бинарника, качается отдельно
+*.task
+
+# Замеры benchmark и резервные копии памяти
+artifacts/_benchmark/
+*.bak
+
+# Локальные настройки машины
+.env
+
+# Прежняя однофайловая версия, сохранена в истории git
+main.py
+route_technique_system.py
+# Служебные папки редакторов
+.vscode/
+.idea/
+artifacts/_diag/
+artifacts/_poses_свои/
+
+# Документация остаётся на диске, но в репозиторий не входит
+*.md
+artifacts/_кэш_свои/

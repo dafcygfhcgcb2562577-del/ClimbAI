@@ -1,0 +1,181 @@
+:root {
+  --фон: #14161a;
+  --карточка: #1e2127;
+  --текст: #eef1f5;
+  --тихий: #a4acb9;
+  --рамка: #2c313a;
+  --хорошо: #4ec98a;
+  --плохо: #ff6b6b;
+  --кнопка: #4c8dff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--фон);
+  color: var(--текст);
+  font: 16px/1.55 -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+.страница {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+h1 { font-size: 26px; margin: 0 0 4px; }
+h2 { font-size: 19px; margin: 0 0 8px; }
+h3 { font-size: 17px; margin: 0 0 4px; }
+
+.под, .подсказка, .мелко, .когда, .пусто { color: var(--тихий); }
+.под { margin: 0 0 20px; }
+.подсказка, .мелко, .когда { font-size: 14px; }
+.заголовок { margin: 28px 0 12px; }
+
+.карточка {
+  background: var(--карточка);
+  border: 1px solid var(--рамка);
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 14px;
+}
+
+.поле { display: block; margin-bottom: 16px; }
+.поле > span:first-child { display: block; font-weight: 600; margin-bottom: 6px; }
+
+input[type="file"], select {
+  width: 100%;
+  padding: 10px;
+  color: var(--текст);
+  background: var(--фон);
+  border: 1px solid var(--рамка);
+  border-radius: 8px;
+}
+
+.пусто { display: block; font-size: 14px; }
+.пусто code {
+  display: block;
+  margin-top: 6px;
+  padding: 8px;
+  background: var(--фон);
+  border-radius: 6px;
+  font-size: 13px;
+  overflow-x: auto;
+}
+
+.главная {
+  width: 100%;
+  padding: 13px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--кнопка);
+  border: 0;
+  border-radius: 9px;
+  cursor: pointer;
+}
+.главная:disabled { opacity: 0.5; cursor: default; }
+
+.состояние { margin-top: 12px; font-size: 15px; }
+.плохо { color: var(--плохо); }
+
+.полоса { height: 8px; background: var(--фон); border-radius: 5px; overflow: hidden; }
+.полоса > div { height: 100%; width: 0; background: var(--кнопка); transition: width 0.4s; }
+
+.вердикт { border-left: 4px solid var(--рамка); }
+.вердикт--хорошо { border-left-color: var(--хорошо); }
+.вердикт--плохо { border-left-color: var(--плохо); }
+.вердикт--тихо { border-left-color: var(--тихий); }
+
+.ошибка { display: flex; gap: 14px; align-items: flex-start; }
+.ошибка img {
+  width: 150px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+.ошибка h3 { color: var(--плохо); }
+.совет { margin: 0 0 6px; }
+
+.список { margin: 0; padding-left: 18px; }
+.список li { margin-bottom: 5px; }
+.список .мелко { margin-left: 6px; }
+
+.назад { color: var(--кнопка); text-decoration: none; font-size: 14px; }
+
+.ссылки {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin: 0 0 20px;
+}
+
+.вкладка {
+  display: inline-block;
+  padding: 7px 15px;
+  border: 1px solid var(--кнопка);
+  border-radius: 999px;
+  color: var(--кнопка);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.вкладка:hover { background: var(--кнопка); color: var(--фон); }
+
+@media (max-width: 480px) {
+  .ошибка { flex-direction: column; }
+  .ошибка img { width: 100%; }
+}
+
+.места {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 12px;
+}
+.место {
+  margin: 0;
+  background: #12151c;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.место img {
+  width: 100%;
+  height: 260px;
+  object-fit: contain;
+  background: #0b0d12;
+  display: block;
+}
+.место figcaption {
+  padding: 8px 10px;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+.место figcaption span {
+  opacity: 0.55;
+}
+
+.техника video {
+  max-width: 100%;
+  max-height: 440px;
+  width: auto;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  margin: 10px 0;
+  background: #0b0d12;
+}
+.техника h2 {
+  margin: 0 0 6px;
+}
+.как {
+  margin: 8px 0 0;
+  padding-left: 20px;
+  line-height: 1.55;
+}
+.как li {
+  margin-bottom: 4px;
+}

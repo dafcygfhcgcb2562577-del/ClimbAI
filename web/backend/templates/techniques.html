@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ClimbAI: техники</title>
+  <link rel="stylesheet" href="/static/style.css?v={{ метка }}" />
+</head>
+<body>
+  <main class="страница">
+    <header>
+      <h1>Техники</h1>
+      <a class="назад" href="/">← разобрать видео</a>
+    </header>
+
+    {% for т in техники %}
+    <section class="карточка техника">
+      <h2>{{ т.название }}</h2>
+      <p>{{ т.суть }}</p>
+      {% if т.видео %}
+      <video src="/образцы/{{ т.видео }}" controls preload="none" playsinline></video>
+      {% endif %}
+      <ol class="как">
+        {% for шаг in т.как %}<li>{{ шаг }}</li>{% endfor %}
+      </ol>
+    </section>
+    {% endfor %}
+  </main>
+</body>
+</html>

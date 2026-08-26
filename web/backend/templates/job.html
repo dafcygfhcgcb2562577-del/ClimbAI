@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ClimbAI: результат разбора</title>
+  <link rel="stylesheet" href="/static/style.css?v={{ метка }}" />
+</head>
+<body data-job="{{ job_id }}">
+  <main class="страница">
+    <header>
+      <h1>Разбор пролаза</h1>
+      <p class="ссылки">
+        <a class="назад" href="/">← разобрать другое видео</a>
+        <a class="вкладка" href="/техники">Как делать техники →</a>
+      </p>
+    </header>
+
+    <section id="ход" class="карточка">
+      <p id="шаг">Готовлюсь…</p>
+      <div class="полоса"><div id="заполнение"></div></div>
+    </section>
+
+    <section id="итог" hidden></section>
+    <section id="ошибки" hidden></section>
+    <section id="выполнено" hidden></section>
+  </main>
+
+  <script src="/static/job.js?v={{ метка }}"></script>
+</body>
+</html>

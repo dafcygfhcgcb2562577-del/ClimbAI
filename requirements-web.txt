@@ -1,0 +1,21 @@
+# Зависимости web-режима ClimbAI (Python 3.12).
+# Установка: python -m pip install -r requirements-web.txt
+
+# --- веб-слой
+fastapi
+uvicorn
+jinja2
+python-multipart
+
+# --- компьютерное зрение и вычисления
+mediapipe
+opencv-python
+numpy
+
+# scikit-learn и joblib больше не нужны: k-NN по позам и ML-классификатор
+# техник убраны вместе с той частью, которая сравнивала позу саму с собой.
+# Эталон трассы — обычный JSON, правила распознавания — арифметика на numpy.
+
+# --- тесты
+pytest
+httpx

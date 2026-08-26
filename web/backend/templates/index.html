@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ClimbAI: разбор техники лазания</title>
+  <link rel="stylesheet" href="/static/style.css?v={{ метка }}" />
+</head>
+<body>
+  <main class="страница">
+    <header>
+      <h1>ClimbAI</h1>
+      <p class="под">Загрузите видео пролаза. Покажем, где не сделана нужная техника.</p>
+      <p class="ссылки"><a class="вкладка" href="/техники">Как делать техники →</a></p>
+    </header>
+
+    <form id="форма" class="карточка">
+      <label class="поле">
+        <span>Видео пролаза</span>
+        <input type="file" name="video" id="видео" accept="video/*" required />
+      </label>
+
+      {% if not есть_эталон %}
+      <p class="пусто">
+        Базы образцовых пролазов пока нет, поэтому ошибки показать не с чем.
+        Покажем только то, что вы выполнили. Соберите базу: сложите в одну папку
+        несколько образцовых пролазов и выполните
+        <code>python app.py эталон --видео "папка"</code>
+      </p>
+      {% endif %}
+
+      <p class="подсказка">
+        Разбор занимает от одной до трёх минут. Снимайте так, чтобы человек и стена помещались
+        в кадр целиком: чем мельче спортсмен, тем хуже видно позу.
+      </p>
+
+      <button type="submit" class="главная">Разобрать пролаз</button>
+    </form>
+
+    <div id="состояние" class="состояние"></div>
+  </main>
+
+  <script src="/static/app.js?v={{ метка }}"></script>
+</body>
+</html>
